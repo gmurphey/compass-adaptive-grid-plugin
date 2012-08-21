@@ -1,4 +1,4 @@
-960 (Adaptive) Grid System - Compass Plugin
+Compass Adaptive Grid Plugin
 ===========================================
 
 An adaptive grid Compass plugin heavily inspired by Matt Sanders' [compass-960-plugin](http://raw.github.com/nextmat/compass-960-plugin).
