@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{compass-adaptive-960-plugin}
+  s.name = %q{compass-adaptive-grid-plugin}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5")
@@ -11,18 +11,18 @@ Gem::Specification.new do |s|
   s.email = %w{gmurphey@gmurphey.com}
   s.has_rdoc = false
   s.files = [
-    "compass-adaptive-960-plugin.gemspec",
+    "compass-adaptive-grid-plugin.gemspec",
     "README.mkdn",
-    "lib/adaptive-ninesixty.rb",
-    "stylesheets/960/_grid.scss",
-    "stylesheets/960/_text.scss",
+    "lib/adaptive-grid.rb",
+    "stylesheets/adaptive-grid/_grid.scss",
+    "stylesheets/adaptive-grid/_text.scss",
     "templates/project/grid.scss",
     "templates/project/manifest.rb",
     "templates/project/text.scss"
   ]
-  s.homepage = %q{https://github.com/gmurphey/compass-adaptive-960-plugin}
+  s.homepage = %q{https://github.com/gmurphey/compass-adaptive-grid-plugin}
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{compass-adaptive-960-plugin}
+  s.rubyforge_project = %q{compass-adaptive-grid-plugin}
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Compass compatible Sass port of an adaptive 960.gs.}
   s.add_dependency(%q<compass>, [">= 0.10.0"])

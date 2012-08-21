@@ -1,0 +1,141 @@
+$adaptive-grid-gutter-width: 20px !default;
+$adaptive-grid-max-width: 960px !default;
+$adaptive-grid-columns: 12 !default;
+$adaptive-grid-class-separator: "-" !default;
+
+@import "compass/css3/box-sizing";
+
+@mixin grid-container($max-width: $adaptive-grid-max-width) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+  width: 100%;
+}
+
+@mixin grid-width($n, $cols: $adaptive-grid-columns) {
+  width: percentage((1 / $cols) * $n);
+}
+
+@mixin grid-unit-base($gutter-width: $adaptive-grid-gutter-width) {
+  @include box-sizing(border-box);
+
+  display: inline;
+  float: left;
+  padding: {
+    left: $gutter-width / 2;
+    right: $gutter-width / 2;
+  }
+}
+
+@mixin grid($n, $cols: $adaptive-grid-columns, $gutter-width: $adaptive-grid-gutter-width) {
+  @include grid-unit-base($gutter-width);
+  @include grid-width($n, $cols);
+}
+
+@mixin alpha {
+  padding-left: 0;
+}
+
+@mixin omega {
+  padding-right: 0;
+}
+
+@mixin grids($cols: $adaptive-grid-columns, $gutter-width: $adaptive-grid-gutter-width) {
+  #{enumerate(".grid", 1, $cols, $adaptive-grid-class-separator)} {
+    @include grid-unit-base($gutter-width);
+  }
+
+  @for $n from 1 through $cols {
+    .grid#{$adaptive-grid-class-separator}#{$n} {
+      @include grid-width($n, $cols);
+    }
+  }
+}
+
+@mixin grid-prefix($n, $cols: $adaptive-grid-columns) {
+  padding-left: percentage((1 / $cols) * $n);
+}
+
+@mixin grid-prefixes($cols: $adaptive-grid-columns) {
+  @for $n from 1 through $cols - 1 {
+   .prefix#{$adaptive-grid-class-separator}#{$n} {
+      @include grid-prefix($n, $cols);
+    }
+  }
+}
+
+@mixin grid-suffix($n, $cols: $adaptive-grid-columns) {
+  padding-right: percentage((1 / $cols) * $n);
+}
+
+@mixin grid-suffixes($cols: $adaptive-grid-columns) {
+  @for $n from 1 through $cols - 1 {
+    .suffix#{$adaptive-grid-class-separator}#{$n} {
+      @include grid-suffix($n, $cols);
+    }
+  }
+}
+
+@mixin grid-children {
+  .alpha {
+    @include alpha;
+  }
+
+  .omega {
+    @include omega;
+  }
+}
+
+@mixin grid-move-base {
+  position: relative;
+}
+
+@mixin grid-move-push($n, $cols) {
+  left: (1 / $cols) * $n;
+}
+
+@mixin grid-move-pull($n, $cols) {
+  left: -(1 / $cols) * $n;
+}
+
+@mixin grid-push($n, $cols: $adaptive-grid-columns) {
+  @include grid-move-base;
+  @include grid-move-push($n, $cols);
+}
+
+@mixin grid-pull($n, $cols: $adaptive-grid-columns) {
+  @include grid-move-base;
+  @include grid-move-pull($n, $cols);
+}
+
+@mixin grid-movements($cols: $adaptive-grid-columns) {
+  #{enumerate(".push", 1, $cols - 1, $adaptive-grid-class-separator)},
+  #{enumerate(".pull", 1, $cols - 1, $adaptive-grid-class-separator)} {
+    @include grid-move-base;
+  }
+
+  @for $n from 1 through $cols - 1 {
+    .push#{$adaptive-grid-class-separator}#{$n} {
+      @include grid-move-push($n, $cols);
+    }
+
+    .pull#{$adaptive-grid-class-separator}#{$n} {
+      @include grid-move-pull($n, $cols);
+    }
+  }
+}
+
+@mixin grid-system($cols: $adaptive-grid-columns) {
+  @include grid-container;
+  @include grids($cols);
+  @include grid-prefixes($cols);
+  @include grid-suffixes($cols);
+  @include grid-children;
+  @include grid-movements($cols);
+}
+
+@mixin grid-system-complete($cols: $adaptive-grid-columns) {
+  .container#{$adaptive-grid-class-separator}#{$cols} {
+    @include grid-system($cols);
+  }
+}
