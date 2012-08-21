@@ -1,4 +1,13 @@
-960 (Adaptive) Grid System - Compass Plugin
-===========================================
+# 960 (Adaptive) Grid System - Compass Plugin
 
 An adaptive grid Compass plugin heavily inspired by Matt Sanders' [compass-960-plugin](http://raw.github.com/nextmat/compass-960-plugin).
+
+## Installation
+
+    gem install compass-adaptive-grid-plugin
+
+## Putting it to Use
+
+    compass create -r adaptive-grid my_project --using adaptive-grid
+
+Then you can edit your `scss` files as usual. A Compass reset is included with the base styles automatically.
