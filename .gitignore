@@ -1,4 +1,4 @@
 *.css
+*.gem
 .sass-cache/
 pkg/
-.gem
