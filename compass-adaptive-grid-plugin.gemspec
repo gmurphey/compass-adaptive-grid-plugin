@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{compass-adaptive-grid-plugin}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5")
   s.authors = ["Garrett Murphey"]
@@ -15,10 +15,8 @@ Gem::Specification.new do |s|
     "README.mkdn",
     "lib/adaptive-grid.rb",
     "stylesheets/adaptive-grid/_grid.scss",
-    "stylesheets/adaptive-grid/_text.scss",
     "templates/project/grid.scss",
-    "templates/project/manifest.rb",
-    "templates/project/text.scss"
+    "templates/project/manifest.rb"
   ]
   s.homepage = %q{https://github.com/gmurphey/compass-adaptive-grid-plugin}
   s.require_paths = ["lib"]

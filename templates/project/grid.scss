@@ -1,5 +1,4 @@
-/* 960 Grid System ~ Core CSS.
- * Learn more ~ http://960.gs/
+/* Adaptive Grids
  * *
  * Licensed under GPL and MIT.
 */
@@ -7,7 +6,7 @@
 @import "compass/reset";
 @import "adaptive-grid/grid";
 
-// The following generates the default grids provided by the css version of 960.gs
+// The following generates the default grids:
 .container_12 {
   @include grid-system(12);
 }
