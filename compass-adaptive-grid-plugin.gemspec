@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5")
   s.authors = ["Garrett Murphey"]
-  s.date = %q{2012-04-27}
-  s.description = %q{The 960 Grid System is an effort to streamline web development workflow by providing commonly used dimensions, based on a width of 960 pixels. http://960.gs/}
+  s.date = %q{2012-08-21}
+  s.description = %q{The Compass Adaptive Grid plugin aims to make it easier to quickly build and deploy fluid layouts with Sass.}
   s.email = %w{gmurphey@gmurphey.com}
   s.has_rdoc = false
   s.files = [
@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{compass-adaptive-grid-plugin}
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{Compass compatible Sass port of an adaptive 960.gs.}
+  s.summary = %q{Compass compatible Sass adaptive grid system.}
   s.add_dependency(%q<compass>, [">= 0.10.0"])
 end
