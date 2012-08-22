@@ -11,3 +11,22 @@ An adaptive grid Compass plugin heavily inspired by Matt Sanders' [compass-960-p
     compass create -r adaptive-grid my_project --using adaptive-grid
 
 Then you can edit your `scss` files as usual. A Compass reset is included with the base styles automatically.
+
+## Using With Existing Compass Projects
+
+Add the following to the beginning of your `config.rb`:
+
+    require 'adaptive-grid'
+
+And import the grid in your `scss` file:
+
+    @import 'adaptive-grid/grid';
+
+## Customizing Your Grid
+
+The following are the variable defaults used by the plugin.
+
+    $adaptive-grid-gutter-width: 20px !default;
+    $adaptive-grid-max-width: 960px !default;
+    $adaptive-grid-columns: 12 !default;
+    $adaptive-grid-class-separator: "-" !default;
